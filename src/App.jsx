@@ -26,7 +26,7 @@ export default function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
+        {import.meta.env.DEV && (<ReactQueryDevtools initialIsOpen={false} />)}
         <BrowserRouter>
           <Routes>
             <Route element={<AppLayouts />}>
