@@ -26,7 +26,7 @@ export default function Archive({ projectCards = [], leftSlide }) {
                             stiffness: 180,
                             damping: 18,
                         }}
-                        className="group overflow-hidden bg-surface aspect-[4/5] rounded-sm border block"
+                        className="overflow-hidden bg-surface aspect-4/5 rounded-sm border block"
                     >
                         <motion.img
                             src={card.image}
@@ -38,7 +38,7 @@ export default function Archive({ projectCards = [], leftSlide }) {
                                 duration: 0.7,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover rounded-2xl "
                         />
                     </motion.a>
 
