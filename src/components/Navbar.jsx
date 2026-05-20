@@ -101,9 +101,9 @@ export default function Navbar() {
 
       {/* Desktop */}
       <nav className="hidden pr-6 lg:flex gap-50 items-center w-full">
-        <ul className="text-white uppercase flex gap-10 items-center ">
+        <ul className="text-white  uppercase flex gap-10 items-center ">
           {navLinks.map(link => (
-            <li to={link.path} key={link.id}>{link.label}</li>
+            <Link to={link.path} key={link.id}>{link.label}</Link>
           ))}
         </ul>
 
