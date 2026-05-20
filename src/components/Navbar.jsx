@@ -21,7 +21,7 @@ export default function Navbar() {
       {/* TOP BAR */}
       <div className="w-full flex justify-between items-center px-8 min-h-15.75">
         <Link className="text-lg text-white font-semibold" to="/">
-          AO<span className="text-blue-500 text-3xl"> . </span>DEV
+          AO<span className="text-blue-500 text-lg"> . </span>DEV
         </Link>
 
         {/* Animated Icon Button */}
@@ -82,7 +82,7 @@ export default function Navbar() {
                     <Link
                       onClick={() => setIsOpen(false)}
                       to={link.path}
-                      className="relative uppercase transition-colors duration-300 hover:text-blue-500"
+                      className="relative text-stone-500 uppercase transition-colors duration-300 hover:text-blue-500"
                     >
                       {link.label}
 
@@ -101,15 +101,15 @@ export default function Navbar() {
 
       {/* Desktop */}
       <nav className="hidden pr-6 lg:flex gap-50 items-center w-full">
-        <ul className="text-white  uppercase flex gap-10 items-center ">
+        <ul className=" text-stone-500 uppercase tracking-wider text-sm flex gap-10 items-center ">
           {navLinks.map(link => (
             <Link to={link.path} key={link.id}>{link.label}</Link>
           ))}
         </ul>
 
         <div className="text-white flex items-center">
-          <span><RxDotFilled size={20} className="animate-pulse text-green-500" /></span>
-          <p>Available</p>
+          <span><RxDotFilled size={20} className=" animate-pulse text-green-500" /></span>
+          <p className="text-stone-500 uppercase tracking-wider text-sm">Available</p>
         </div>
 
       </nav>
