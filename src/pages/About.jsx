@@ -5,7 +5,6 @@ export default function About() {
     <div className="px-6 bg-linear-to-br from-black via-zinc-950 to-black">
       <AboutUi />
     </div>
-
   )
 }
 

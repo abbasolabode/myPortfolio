@@ -66,7 +66,7 @@ export default function SelectedWork() {
                         Selected Work
                     </h2>
 
-                    <span className="text-[10px] uppercase tracking-widest text-stone-500">
+                    <span className="text-[10px] whitespace-nowrap uppercase tracking-widest text-stone-500">
                         (01 - 02)
                     </span>
                 </div>
