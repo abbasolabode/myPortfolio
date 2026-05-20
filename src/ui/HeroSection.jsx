@@ -93,7 +93,7 @@ export default function HeroSection() {
                 className="absolute bottom-[-12rem] right-[-10rem] w-[30rem] h-[30rem] rounded-full bg-white/5 blur-3xl"
             />
 
-            <div className="max-w-7xl mx-auto w-full relative z-10">
+            <div className="max-w-7xl lg:pt-40  mx-auto w-full relative z-10">
                 {/* Small top text */}
                 <motion.span
                     variants={leftSlide}

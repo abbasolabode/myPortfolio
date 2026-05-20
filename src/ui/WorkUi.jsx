@@ -86,7 +86,7 @@ export default function WorkUi() {
             </header>
 
             {/* Body of contents */}
-            <div className="px-6">
+            <div className="px-6 py-8">
                 <Archive projectCards={projectCards} />
             </div>
         </main>
