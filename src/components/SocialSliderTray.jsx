@@ -49,22 +49,25 @@ const trayVariants = {
     hidden: {
         x: -120,
         opacity: 0,
+        transition: {
+            duration: 0.9,
+            ease: [0.25, 0.1, 0.25, 1],
+        },
     },
     visible: {
         x: 0,
         opacity: 1,
         transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 0.6,
+            duration: 1.1,
+            ease: [0.22, 1, 0.36, 1],
         },
     },
     exit: {
         x: -120,
         opacity: 0,
         transition: {
-            duration: 0.4,
+            duration: 0.9,
+            ease: [0.22, 1, 0.36, 1],
         },
     },
 };
@@ -105,9 +108,9 @@ export default function SocialSliderTray() {
             exit="exit"
         >
             {/* Main Tray Container */}
-            <div className="flex items-center gap-4 px-5 py-6 bg-gradient-to-r from-neutral-950 via-zinc-900 to-black rounded-r-2xl shadow-2xl backdrop-blur-sm border border-white/10">
+            <div className="flex items-center gap-4 px-5 py-6 bg-gradient-to-r from-black via-slate-900 to-white rounded-r-2xl shadow-lg backdrop-blur-sm border border-white/15">
                 {/* Vertical Divider Line */}
-                <div className="w-1 h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent rounded-full"></div>
+                <div className="w-1 h-16 bg-white/20 rounded-full"></div>
 
                 {/* Social Links Container */}
                 <div className="flex flex-col gap-3">
