@@ -15,7 +15,7 @@ export function useHandleOutsideClick(listening = true) {
         const timer = setInterval(() => {
             if (isOpen) return;
             setIsOpen(true);
-        }, 10000);
+        }, 20000);
 
         //Clean up function
         return () => clearInterval(timer);
