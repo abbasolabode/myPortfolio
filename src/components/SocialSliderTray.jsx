@@ -6,35 +6,35 @@ import { MdEmail, MdPhone } from "react-icons/md";
 
 const socials = [
     {
-        icon: <FaLinkedin className="text-2xl" />,
+        icon: <FaLinkedin className="text-lg" />,
         label: "LinkedIn",
         href: "https://www.linkedin.com/in/abbas-olabode",
         color: "hover:text-blue-600",
         bgColor: "hover:bg-blue-100",
     },
     {
-        icon: <FaGithub className="text-2xl" />,
+        icon: <FaGithub className="text-lg" />,
         label: "GitHub",
         href: "https://github.com/abbasolabode",
         color: "hover:text-gray-800",
         bgColor: "hover:bg-gray-100",
     },
     {
-        icon: <FaXTwitter className="text-2xl" />,
+        icon: <FaXTwitter className="text-lg" />,
         label: "Twitter",
         href: "https://x.com/Unlimitedsido",
         color: "hover:text-black",
         bgColor: "hover:bg-gray-100",
     },
     {
-        icon: <MdEmail className="text-2xl" />,
+        icon: <MdEmail className="text-lg" />,
         label: "Email",
         href: "olabodeabbas80@gmail.com",
         color: "hover:text-red-600",
         bgColor: "hover:bg-red-100",
     },
     {
-        icon: <MdPhone className="text-2xl" />,
+        icon: <MdPhone className="text-lg" />,
         label: "Phone",
         href: "tel:+2347065560628",
         color: "hover:text-green-600",
@@ -101,26 +101,26 @@ export default function SocialSliderTray() {
 
     return (
         <motion.div
-            className="fixed bottom-10 left-0 z-40"
+            className="fixed bottom-6 left-0 z-40"
             variants={trayVariants}
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
             exit="exit"
         >
             {/* Main Tray Container */}
-            <div className="flex items-center gap-4 px-5 py-6 bg-gradient-to-r from-black via-slate-900 to-white rounded-r-2xl shadow-lg backdrop-blur-sm border border-white/15">
+            <div className="flex items-center gap-2 px-3 py-4 bg-gradient-to-r from-black via-slate-900 to-white rounded-r-2xl shadow-lg backdrop-blur-sm border border-white/15">
                 {/* Vertical Divider Line */}
-                <div className="w-1 h-16 bg-white/20 rounded-full"></div>
+                <div className="w-1 h-12 bg-white/20 rounded-full"></div>
 
                 {/* Social Links Container */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
                     {socials.map((social, i) => (
                         <motion.a
                             key={social.label}
                             href={social.href}
                             target={social.label !== "Email" && social.label !== "Phone" ? "_blank" : "_self"}
                             rel={social.label !== "Email" && social.label !== "Phone" ? "noopener noreferrer" : ""}
-                            className={`flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-gray-700 transition-all duration-300 ${social.bgColor} ${social.color} shadow-md hover:shadow-lg`}
+                            className={`flex items-center justify-center w-9 h-9 rounded-full bg-gray-50 text-gray-700 transition-all duration-300 ${social.bgColor} ${social.color} shadow-md hover:shadow-lg`}
                             variants={itemVariants}
                             custom={i}
                             whileHover={{
@@ -138,7 +138,7 @@ export default function SocialSliderTray() {
                 </div>
 
                 {/* Vertical Divider Line */}
-                <div className="w-1 h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent rounded-full"></div>
+                <div className="w-1 h-12 bg-gradient-to-b from-transparent via-gray-300 to-transparent rounded-full"></div>
 
                 {/* Side Label (Optional) */}
                 <div className="hidden md:flex flex-col items-center gap-1 ml-2">
