@@ -1,57 +1,10 @@
-import { useEffect, useRef, useState, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useHandleOutsideClick } from "../hooks/useHandleOutsideClick"
 
 export default function Modal() {
-    const [isOpen, setIsOpen] = useState(false);
-    const ref = useRef(null)
-    console.log(isOpen);
+    const { isOpen, handleCloseModal, ref } = useHandleOutsideClick()
 
-    const handleCloseModal = useCallback(() => {
-        setIsOpen(false);
-    });
-
-
-    //Automatic display of the modal
-    useEffect(() => {
-        const timer = setInterval(() => {
-            if (isOpen) return;
-            setIsOpen(true);
-        }, 10000);
-
-        //Clean up function
-        return () => clearInterval(timer);
-    }, [isOpen])
-
-
-    useEffect(() => {
-        const handleOutsideClick = function (e) {
-            if (ref.current && !ref.current.contains(e.target)) return handleCloseModal();
-        }
-
-        document.addEventListener("click", handleOutsideClick, true);
-
-        //Clean up function
-        return () => removeEventListener("click", handleOutsideClick, true)
-    }, [handleCloseModal]);
-
-
-
-
-    useEffect(() => {
-        const handleEscapeKey = function (e) {
-            if (e.key === "Escape") return handleCloseModal();
-        }
-
-        document.addEventListener("keydown", handleEscapeKey,);
-
-        //Clean up function
-        return () => removeEventListener("keydown", handleEscapeKey,)
-    }, [handleCloseModal]);
-
-
-
-
-
+    if (!isOpen) return;
     return (
         <AnimatePresence>
             {isOpen && (
