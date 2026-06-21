@@ -184,8 +184,8 @@ export default function HeroSection() {
                         className="max-w-[44ch] text-base md:text-lg leading-relaxed text-stone-600"
                     >
                         Frontend developer focused on building clean,
-                        responsive, and user-friendly web applications with
-                        React and Supabase.
+                        responsive, high performance, and user-friendly web applications with
+                        ReactJS, JavaScript and Supabase.
                     </motion.p>
 
                     <motion.div

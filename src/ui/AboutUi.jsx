@@ -202,13 +202,7 @@ export default function AboutUi() {
                         className="md:col-span-8 space-y-6 text-white text-lg leading-relaxed"
                     >
                         {[
-                            "I’m a frontend developer passionate about building modern, user-focused digital experiences. I enjoy combining clean engineering with thoughtful design — paying attention to typography, motion, responsiveness, and the subtle details that make interfaces feel smooth and intuitive.",
-
-                            "My workflow mainly revolves around React, Supabase, Tailwind CSS, and modern frontend technologies, but beyond the tools, I care deeply about creating software that is fast, accessible, scalable, and visually refined.",
-
-                            "I’ve worked on projects ranging from management systems and booking platforms to responsive business websites and interactive web applications, continuously improving my craft through hands-on development and collaboration.",
-
-                            "Outside development, I enjoy exploring UI/UX trends, refining interface animations, learning new technologies, and pushing myself to create better digital experiences with every project.",
+                            "I am a frontend developer who loves building fast and user friendly web applications. For me, good development is a mix of clean code and sharp design. I focus on the small details like typography, smooth animations, and responsiveness that make an interface feel natural to use. My main stack includes React, Supabase, and Tailwind CSS. Beyond the specific tools, my priority is always writing code that is scalable, accessible, and highly optimized. I have built projects ranging from sleek business websites to interactive web applications, focusing on creating great tools for users. Outside of coding, I am usually checking out new design trends, playing with interface animations, or learning new tech to sharpen my skills.",
                         ].map((text, index) => (
                             <motion.p
                                 key={index}
