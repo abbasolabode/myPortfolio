@@ -1,15 +1,16 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useHandleOutsideClick } from "../hooks/useHandleOutsideClick"
+import { Link } from "react-router-dom"
 
 export default function Modal() {
     const { isOpen, handleCloseModal, ref } = useHandleOutsideClick()
 
-    if (!isOpen) return;
+
     return (
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 z-50"
+                    className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 z-50"
                     role="dialog"
                     aria-modal="true"
                     aria-label="AI integration status"
@@ -20,7 +21,7 @@ export default function Modal() {
                 >
                     <motion.div
                         ref={ref}
-                        className="relative w-full max-w-md bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 rounded-xl shadow-lg p-6 text-center ring-1 ring-gray-800"
+                        className="relative w-full max-w-md bg-gradient-to-b from-gray-600 via-gray-600 to-black text-gray-100 rounded-xl shadow-lg p-6 text-center ring-1 ring-gray-800"
                         initial={{ scale: 0.75, opacity: 0, y: 20 }}
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.75, opacity: 0, y: 20 }}
@@ -33,11 +34,11 @@ export default function Modal() {
                             </svg>
                         </button>
 
-                        <h2 className="text-xl font-semibold mb-2">AI Integration — In Progress</h2>
+                        <h2 className="text-xl font-semibold mb-2">AI Integration Project — In Progress</h2>
                         <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">The AI-integration project is currently in progress and will be completed soon. You can still explore the completed parts of the site below.</p>
 
                         <motion.div className="flex gap-3 justify-center">
-                            {/*  <button className="inline-flex items-center cursor-pointer px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-md font-semibold" type="button">View Completed</button> */}
+                            <Link to="/work" className="inline-flex items-center cursor-pointer px-4 py-2 bg-gray-500/50 hover:bg-gray-600 text-white rounded-md font-semibold" type="button">View Completed</Link>
                             <button onClick={handleCloseModal} className="inline-flex items-center cursor-pointer px-4 py-2 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 bg-transparent rounded-md" type="button">Close</button>
                         </motion.div>
                     </motion.div>
