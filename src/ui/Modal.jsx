@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion"
-import { useHandleOutsideClick } from "../hooks/useHandleOutsideClick"
 import { Link } from "react-router-dom"
+import { useHandleOutsideClick } from "../hooks/useHandleOutsideClick"
 
 export default function Modal() {
-    const { isOpen, handleCloseModal, ref } = useHandleOutsideClick()
+    const { isOpen, handleCloseModal, ref } = useHandleOutsideClick();
 
 
     return (
@@ -18,6 +18,7 @@ export default function Modal() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
+                    onClick={handleCloseModal}
                 >
                     <motion.div
                         ref={ref}
@@ -26,6 +27,7 @@ export default function Modal() {
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.75, opacity: 0, y: 20 }}
                         transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                        onClick={(e) => e.stopPropagation()}
                     >
                         <button onClick={handleCloseModal} aria-label="Close modal" type="button" className="absolute cursor-pointer top-3 right-3 p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
