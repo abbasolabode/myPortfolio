@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+/* CSS Variables */
+:root {
+    --font-monoton: "Monoton", cursive;
+    --font-pt-serif: "PT Serif", serif;
+    --font-oswald: "Oswald", sans-serif;
+}
+
+/* Global styles */
+body {
+    font-family: var(--font-pt-serif);
+}
+
+/* h1 and h2 use Oswald */
+h1,
+h2 {
+    font-family: var(--font-oswald) !important;
+}
+
+/* Everything else uses PT Serif */
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+a,
+li,
+input {
+    font-family: var(--font-pt-serif);
+}
