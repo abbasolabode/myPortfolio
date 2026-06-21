@@ -8,7 +8,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ThankYou from "./ui/ThankYou";
 import Work from "./pages/Work";
-import WhatsAppFloat from "./components/WhatsAppFloat";
 
 
 
@@ -42,7 +41,6 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
-      <WhatsAppFloat />
       <Toaster
         position="top-center"
         gutter={12}
