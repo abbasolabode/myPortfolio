@@ -36,7 +36,7 @@ const socials = [
     {
         icon: <MdPhone className="text-2xl" />,
         label: "Phone",
-        href: "tel:+1234567890",
+        href: "tel:+2347065560628",
         color: "hover:text-green-600",
         bgColor: "hover:bg-green-100",
     },
