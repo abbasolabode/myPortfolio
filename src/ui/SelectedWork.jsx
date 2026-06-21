@@ -10,7 +10,7 @@ import Archive from "../reuseables/Archive";
 const projectCards = [
     {
         id: 1,
-        image: "/images/Screenshot-3.jpg",
+        image: "/images/iPhone-14-radiant-health.png",
         label: "Radiant Health",
         year: 2025,
         url: "https://radiant-health-ea74.vercel.app",
@@ -24,7 +24,7 @@ const projectCards = [
 
     {
         id: 2,
-        image: "/images/Screenshot-2.jpg",
+        image: "/images/iPhone-reinaflo.png",
         label: "Reina Flo",
         year: 2026,
         url: "https://reinaflo.vercel.app",
