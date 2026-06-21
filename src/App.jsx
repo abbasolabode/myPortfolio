@@ -1,4 +1,5 @@
 import { Toaster } from "react-hot-toast";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AppLayouts from "./layouts/AppLayouts";
@@ -25,6 +26,7 @@ export default function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
+        {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
         <BrowserRouter>
           <Routes>
             <Route element={<AppLayouts />}>
