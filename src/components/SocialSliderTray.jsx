@@ -105,7 +105,7 @@ export default function SocialSliderTray() {
             exit="exit"
         >
             {/* Main Tray Container */}
-            <div className="flex items-center gap-4 px-5 py-6 bg-white rounded-r-2xl shadow-2xl backdrop-blur-sm border border-gray-200">
+            <div className="flex items-center gap-4 px-5 py-6 bg-gradient-to-r from-neutral-950 via-zinc-900 to-black rounded-r-2xl shadow-2xl backdrop-blur-sm border border-white/10">
                 {/* Vertical Divider Line */}
                 <div className="w-1 h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent rounded-full"></div>
 
