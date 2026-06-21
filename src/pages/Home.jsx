@@ -1,3 +1,4 @@
+import SocialSliderTray from "../components/SocialSliderTray";
 import HeroSection from "../ui/HeroSection";
 import Modal from "../ui/Modal";
 import ProjectInquiry from "../ui/ProjectInquiry";
@@ -12,6 +13,7 @@ export default function Home() {
       <StackUi />
       <ProjectInquiry />
       <Modal />
+      <SocialSliderTray />
     </main>
   );
 }

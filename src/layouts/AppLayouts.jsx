@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppFloat from "../components/WhatsAppFloat";
-import SocialSliderTray from "../components/SocialSliderTray";
 
 export default function AppLayouts() {
   return (
@@ -11,7 +10,6 @@ export default function AppLayouts() {
       <Outlet />
       <Footer />
       <WhatsAppFloat />
-      <SocialSliderTray />
     </main>
   )
 }
