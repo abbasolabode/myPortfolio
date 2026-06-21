@@ -37,7 +37,7 @@ export default function Modal() {
                         </button>
 
                         <h2 className="text-xl font-semibold mb-2">AI Integration Project — In Progress</h2>
-                        <p className="text-sm text-slate-600 dark:text-white mb-4">The AI-integration project is currently in progress and will be completed soon. You can still explore the completed parts of the site below.</p>
+                        <p className="text-sm text-white mb-4">The AI-integration project is currently in progress and will be completed soon. You can still explore the completed parts of the site below.</p>
 
                         <motion.div className="flex gap-3 justify-center">
                             <Link to="/work" className="inline-flex items-center cursor-pointer px-4 py-2 bg-gray-500/50 hover:bg-gray-600 text-white rounded-md font-semibold" type="button">View Completed</Link>
