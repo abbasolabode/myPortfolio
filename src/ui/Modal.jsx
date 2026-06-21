@@ -1,12 +1,13 @@
-import { motion, AnimatePresence } from "framer-motion"
-import { Link } from "react-router-dom"
-import { useHandleOutsideClick } from "../hooks/useHandleOutsideClick"
+import { motion, AnimatePresence } from "framer-motion";
+import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
+import { useHandleOutsideClick } from "../hooks/useHandleOutsideClick";
 
 export default function Modal() {
     const { isOpen, handleCloseModal, ref } = useHandleOutsideClick();
 
 
-    return (
+    return createPortal(
         <AnimatePresence>
             {isOpen && (
                 <motion.div
@@ -46,6 +47,7 @@ export default function Modal() {
                     </motion.div>
                 </motion.div>
             )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
     )
 }
