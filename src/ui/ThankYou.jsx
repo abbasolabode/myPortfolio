@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function ThankYou() {
     const navigate = useNavigate()
-    
+
     return (
         <div className="relative w-full min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-black via-zinc-950 to-black overflow-hidden font-[family-name:--font-sans]">
             <style>{`
@@ -84,10 +84,10 @@ export default function ThankYou() {
 
             {/* Content */}
             <div className="relative z-10 w-full max-w-sm">
-                <div className="bg-zinc-800/70 backdrop-blur-sm border border-indigo-500/10 rounded-3xl p-16 md:p-12 text-center shadow-2xl">
-                    
+                <div className="bg-zinc-800/70 backdrop-blur-sm border border-indigo-500/10 rounded-3xl p-16 md:p-12 text-center shadow-xl">
+
                     {/* Checkmark Circle */}
-                    <div className="animate-slide-up-1 mb-8 flex justify-center">
+                    {/*  <div className="animate-slide-up-1 mb-8 flex justify-center">
                         <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/30 animate-pulse animate-float">
                             <svg className="w-12 h-12" viewBox="0 0 52 52">
                                 <path
@@ -101,7 +101,7 @@ export default function ThankYou() {
                                 />
                             </svg>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Title */}
                     <h1 className="animate-slide-up-2 text-4xl md:text-5xl font-bold text-slate-100 mb-3 tracking-tight">
@@ -119,9 +119,9 @@ export default function ThankYou() {
                     </p>
 
                     {/* Button */}
-                    <button 
+                    <button
                         onClick={() => navigate("/")}
-                        className="animate-slide-up-5 w-full px-8 py-4 bg-white text-black font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 active:scale-95 hover:-translate-y-0.5 border border-indigo-500/20 hover:border-indigo-500/40 relative group overflow-hidden"
+                        className="animate-slide-up-5 cursor-pointer w-full px-8 py-4 bg-white text-black font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 active:scale-95 hover:-translate-y-0.5 border border-indigo-500/20 hover:border-indigo-500/40 relative group overflow-hidden"
                     >
                         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500" />
                         <span className="relative">Go Back Home</span>

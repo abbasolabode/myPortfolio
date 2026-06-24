@@ -1,3 +1,4 @@
+import { SyncLoader } from "react-spinners";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { FiSend } from "react-icons/fi";
@@ -37,12 +38,15 @@ export default function ContactUi() {
     }, []);
 
     const { register, handleSubmit, reset, formState: { isSubmitting, errors } } = useForm();
-    const { mutate, isPending } = useContact()
+    //Destructured properties from useContact custom hook
+    const { mutate, isPending } = useContact();
 
 
     const onSubmit = function (formData) {
         if (!formData) return;
-        mutate(formData);
+        mutate(formData, {
+            onSettled: () => reset(),
+        });
     };
 
     return (
@@ -205,7 +209,7 @@ export default function ContactUi() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="pt-4"
+                    className="pt-4 flex items-center gap-3 "
                 >
                     <motion.button
                         whileHover={{
@@ -235,6 +239,10 @@ export default function ContactUi() {
                             </>
                         )}
                     </motion.button>
+                    {/* Spinner container */}
+                    <span>
+                        {(isPending || isSubmitting) && <SyncLoader size="14px" color="#ffffff" />}
+                    </span>
                 </motion.div>
             </motion.form>
 
