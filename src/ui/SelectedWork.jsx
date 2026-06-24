@@ -82,7 +82,7 @@ export default function SelectedWork() {
                     </h2>
 
                     <span className="text-[10px] whitespace-nowrap uppercase tracking-widest text-stone-500">
-                        (01 - 02)
+                        (01 - 03)
                     </span>
                 </div>
 

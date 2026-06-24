@@ -71,7 +71,7 @@ const projectCards = [
 
 
     {
-        id: 2,
+        id: 3,
         image: "/images/iPhone-14.png",
         label: "AI-Integration",
         year: 2026,

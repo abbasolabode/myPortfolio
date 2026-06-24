@@ -54,14 +54,18 @@ export default function Archive({ projectCards = [], leftSlide }) {
                         }}
                         className="flex flex-col space-y-1.5"
                     >
-                        <div className="flex justify-between items-start py-1.5 px-1.5">
-                            <h3 className="text-2xl italic text-white">
-                                {card.label}
-                            </h3>
+                        <div className="flex flex-col">
+                            <div className="flex justify-between items-start py-1.5 px-1.5">
+                                <h3 className="text-2xl italic text-white">
+                                    {card.label}
+                                </h3>
 
-                            <span className="text-[10px] rounded-sm py-1 px-2 border border-stone-200 text-white">
-                                {card.year}
-                            </span>
+                                <span className="text-[10px] rounded-sm py-1 px-2 border border-stone-200 text-white">
+                                    {card.year}
+                                </span>
+
+                            </div>
+                            {card?.id === 3 && <h2 className="text-white uppercase relative text-2xl">Coming Soon</h2>}
                         </div>
 
                         {/* ICONS */}
