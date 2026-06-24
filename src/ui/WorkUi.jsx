@@ -39,7 +39,39 @@ const projectCards = [
     },
 
     {
-        id: 3,
+        id: 2,
+        image: "/images/iPhone-reinaflo.png",
+        label: "Reina Flo",
+        year: 2026,
+        url: "https://reinaflo.vercel.app",
+        tool: [
+            <FaReact className="text-blue-500" />,
+            <RiTailwindCssFill className="text-sky-400" />,
+            <SiSupabase className="text-green-400" />,
+            <TbBrandFramerMotion className="text-pink-400" />,
+        ],
+        toolNames: [
+            {
+                id: 1,
+                label: "React",
+                icon: <FaReact className="text-blue-500" />,
+            },
+            {
+                id: 2,
+                label: "Tailwind",
+                icon: <RiTailwindCssFill className="text-blue-500" />,
+            },
+            {
+                id: 3,
+                label: "Supabase",
+                icon: <SiSupabase className="text-green-400" />,
+            },
+        ]
+    },
+
+
+    {
+        id: 2,
         image: "/images/iPhone-14.png",
         label: "AI-Integration",
         year: 2026,
