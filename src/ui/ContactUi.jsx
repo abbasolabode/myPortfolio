@@ -11,19 +11,19 @@ import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 const socialLinks = [
     {
         id: 1,
-        icon: <FaLinkedin/>,
+        icon: <FaLinkedin />,
         path: "https://www.linkedin.com/in/abbas-olabode"
     },
 
     {
         id: 2,
-        icon: <FaXTwitter/>,
+        icon: <FaXTwitter />,
         path: "https://x.com/Unlimitedsido"
     },
 
-     {
+    {
         id: 3,
-        icon: <FaGithub/>,
+        icon: <FaGithub />,
         path: "https://github.com/abbasolabode",
     },
 ]
@@ -121,10 +121,14 @@ export default function ContactUi() {
                             whileFocus={{ scale: 1.02 }}
                             disabled={isSubmitting || isPending}
                             type="email"
-                            placeholder="abbas@studio.com"
+                            placeholder="abbas@developer.com"
                             {...register("email", {
                                 required: "Email is required",
-                            })}
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: "Invalid email address",
+                                },
+                            },)}
                             className="w-full bg-white/5 border border-white/10 text-white px-4 py-4 rounded-xl outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 transition backdrop-blur-md"
                         />
 
@@ -259,7 +263,7 @@ export default function ContactUi() {
                     </p>
 
                     <p className="mt-2 text-stone-400 text-sm">
-                        Feel free to reach out anytime — I usually reply within 24–48 hours.
+                        Feel free to reach out anytime — I usually reply within 24 hours.
                     </p>
                 </motion.div>
 
