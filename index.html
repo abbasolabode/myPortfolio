@@ -1,14 +1,109 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Character Encoding -->
     <meta charset="UTF-8" />
+    
+    <!-- Viewport & Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Professional Portfolio | Abbass Olabode | Full Stack Developer</title>
+    <meta name="description" content="Explore Abbass Olabode's professional portfolio. Showcasing innovative web development projects, full-stack expertise, and creative digital solutions." />
+    <meta name="keywords" content="portfolio, web developer, full stack developer, software engineer, React, JavaScript, Node.js, web design" />
+    <meta name="author" content="Abbass Olabode" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="English" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://myportfolio.vercel.app" />
+    
+    <!-- Open Graph Tags (Social Media) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Professional Portfolio | Abbass Olabode" />
+    <meta property="og:description" content="Full Stack Developer showcasing innovative web development projects and technical expertise." />
+    <meta property="og:url" content="https://myportfolio.vercel.app" />
+    <meta property="og:site_name" content="My Portfolio" />
+    <meta property="og:image" content="https://myportfolio.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Professional Portfolio | Abbass Olabode" />
+    <meta name="twitter:description" content="Full Stack Developer showcasing innovative web development projects." />
+    <meta name="twitter:image" content="https://myportfolio.vercel.app/twitter-image.jpg" />
+    <meta name="twitter:creator" content="@abbasolabode" />
+    <meta name="twitter:site" content="@abbasolabode" />
+    
+    <!-- Additional SEO Tags -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    
+    <!-- Favicons & Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="/src/index.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>myportfolio</title>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- Stylesheets -->
+    <link href="/src/index.css" rel="stylesheet" media="screen" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abbass Olabode",
+      "url": "https://myportfolio.vercel.app",
+      "jobTitle": "Full Stack Developer",
+      "description": "Full Stack Developer specializing in modern web technologies",
+      "sameAs": [
+        "https://github.com/abbasolabode",
+        "https://linkedin.com/in/abbasolabode",
+        "https://twitter.com/abbasolabode"
+      ],
+      "image": "https://myportfolio.vercel.app/profile-image.jpg"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "My Portfolio",
+      "url": "https://myportfolio.vercel.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://myportfolio.vercel.app/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
+    <!-- Main Application Root -->
     <div id="root"></div>
+    
+    <!-- Application Script -->
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- No-Script Fallback -->
+    <noscript>
+      <p>This application requires JavaScript to be enabled. Please enable JavaScript in your browser settings.</p>
+    </noscript>
   </body>
 </html>
