@@ -4,7 +4,7 @@ export default function Archive({ projectCards = [], leftSlide }) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20">
 
-            {projectCards.map((card) => (
+            {projectCards?.map((card = []) => (
                 <motion.div
                     key={card.id}
                     variants={leftSlide}

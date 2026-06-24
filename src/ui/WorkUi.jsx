@@ -39,11 +39,11 @@ const projectCards = [
     },
 
     {
-        id: 2,
-        image: "/images/iPhone-reinaflo.png",
-        label: "Reina Flo",
+        id: 3,
+        image: "/images/iPhone-14.png",
+        label: "AI-Integration",
         year: 2026,
-        url: "https://reinaflo.vercel.app",
+        url: "https://ai-integration-rho.vercel.app/",
         tool: [
             <FaReact className="text-blue-500" />,
             <RiTailwindCssFill className="text-sky-400" />,
@@ -68,6 +68,9 @@ const projectCards = [
             },
         ]
     },
+
+
+
 ];
 
 
