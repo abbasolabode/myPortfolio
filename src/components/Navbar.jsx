@@ -16,7 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-white/10 lg:flex lg:justify-evenly">
+    <header className="fixed top-0 left-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-white/10 lg:flex lg:justify-evenly min-[820px]:flex min-[820px]:justify-between min-[820px]:space-x-4">
 
       {/* TOP BAR */}
       <div className="w-full flex justify-between items-center px-8 min-h-15.75">
@@ -28,7 +28,7 @@ export default function Navbar() {
         <motion.button
           whileTap={{ scale: 0.85 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="w-1 h-10 flex lg:hidden   items-center justify-center text-white"
+          className="w-1 h-10 flex lg:hidden min-[820px]:hidden  items-center justify-center text-white"
         >
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
@@ -100,8 +100,8 @@ export default function Navbar() {
 
 
       {/* Desktop */}
-      <nav className="hidden pr-6 lg:flex gap-50 items-center w-full">
-        <ul className=" text-stone-500 uppercase tracking-wider text-sm flex gap-10 items-center ">
+      <nav className="hidden pr-6 lg:flex lg:gap-50 items-center w-full min-[820px]:flex min-[820px]:gap-10">
+        <ul className="text-stone-500 uppercase tracking-wider text-sm flex gap-10 items-center ">
           {navLinks.map(link => (
             <Link to={link.path} key={link.id}>{link.label}</Link>
           ))}

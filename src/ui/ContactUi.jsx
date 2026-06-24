@@ -219,7 +219,7 @@ export default function ContactUi() {
                         whileTap={{ scale: 0.96 }}
                         disabled={isSubmitting || isPending}
                         type="submit"
-                        className="group flex items-center text-black gap-3 bg-white hover:bg-indigo-500 hover:text-white transition px-7 py-4 rounded-xl text-sm uppercase tracking-widest"
+                        className="group flex items-center text-black gap-3 cursor-pointer bg-white hover:bg-indigo-500/40 hover:text-white transition px-7 py-4 rounded-xl text-sm uppercase tracking-widest"
                     >
                         {isPending || isSubmitting ? (
                             "Submitting..."
