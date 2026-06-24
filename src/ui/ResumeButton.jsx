@@ -20,19 +20,19 @@ export default function ResumeButton({ onClick }) {
             whileHover={{ y: -4, scale: 1.02, boxShadow: "0 18px 40px rgba(0,0,0,0.6)" }}
             whileTap={{ scale: 0.98 }}
             className={
-                "inline-flex items-center gap-3 px-6 py-3 rounded-full font-semibold text-white focus:outline-none transition-transform will-change-transform"
+                "inline-flex items-center cursor-pointer gap-3 px-6 py-3 rounded-xl font-semibold text-white focus:outline-none transition-transform will-change-transform"
             }
             style={{
-                background:
-                    "linear-gradient(180deg, #0b0b0b 0%, #131313 50%, #1f1f1f 100%)",
-                boxShadow: "0 6px 18px rgba(0,0,0,0.5)",
-                border: "1px solid rgba(255,255,255,0.04)",
-                backdropFilter: "saturate(120%) blur(4px)",
+                background: "linear-gradient(180deg, #050505 0%, #0d0d0d 60%, #121212 100%)",
+                boxShadow: "0 8px 20px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,0.03)",
+                WebkitFontSmoothing: "antialiased",
+                MozOsxFontSmoothing: "grayscale",
             }}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
+                className="w-5 h-5 text-gray-400"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -45,7 +45,7 @@ export default function ResumeButton({ onClick }) {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            <span style={{ letterSpacing: "0.2px" }}>Download Resume</span>
+            <span className="tracking-wide text-sm text-gray-100">Download Resume</span>
         </motion.button>
     );
 }
