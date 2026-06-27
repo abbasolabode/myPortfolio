@@ -5,107 +5,85 @@ import { DiJavascript } from "react-icons/di";
 import { IoLogoCss3 } from "react-icons/io";
 import { FiFramer } from "react-icons/fi";
 import { SiVite, SiSupabase } from "react-icons/si";
-import { IoLogoVercel, } from "react-icons/io5";
+import { IoLogoVercel } from "react-icons/io5";
 
 const frontendSkills = [
-    {
-        id: 1,
-        skill: "React JS",
-        icon: <FaReact className="text-[#61DBFB]" />,
-    },
-
-    {
-        id: 2,
-        skill: "JavaScript",
-        icon: <DiJavascript className="text-yellow-400" />,
-    },
+    { id: 1, skill: "React JS", icon: <FaReact className="text-[#61DBFB]" /> },
+    { id: 2, skill: "JavaScript", icon: <DiJavascript className="text-yellow-400" /> },
 ];
 
 const backendSkills = [
-    {
-        id: 1,
-        skill: "Supabase",
-        icon: <SiSupabase className="text-green-400" />,
-    },
+    { id: 1, skill: "Supabase", icon: <SiSupabase className="text-green-400" /> },
 ];
 
 const toolingSkills = [
-    {
-        id: 1,
-        skill: "Vite",
-        icon: <SiVite className="text-purple-400" />,
-    },
-
-    {
-        id: 2,
-        skill: "Git / GitHub",
-        icon: <FaGithub className="text-white" />,
-    },
-
-    {
-        id: 3,
-        skill: "Vercel",
-        icon: <IoLogoVercel className="text-white" />,
-    },
+    { id: 1, skill: "Vite", icon: <SiVite className="text-purple-400" /> },
+    { id: 2, skill: "Git / GitHub", icon: <FaGithub className="text-white" /> },
+    { id: 3, skill: "Vercel", icon: <IoLogoVercel className="text-white" /> },
 ];
 
 const styling = [
-    {
-        id: 1,
-        skill: "CSS",
-        icon: <IoLogoCss3 className="text-blue-500" />,
-    },
-
-    {
-        id: 2,
-        skill: "Tailwind CSS",
-        icon: <RiTailwindCssFill className="text-cyan-400" />,
-    },
-
-    {
-        id: 3,
-        skill: "HTML",
-        icon: <FaHtml5 className="text-orange-500" />,
-    },
-
-    {
-        id: 4,
-        skill: "Framer Motion",
-        icon: <FiFramer className="text-pink-400" />,
-    },
+    { id: 1, skill: "CSS", icon: <IoLogoCss3 className="text-blue-500" /> },
+    { id: 2, skill: "Tailwind CSS", icon: <RiTailwindCssFill className="text-cyan-400" /> },
+    { id: 3, skill: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+    { id: 4, skill: "Framer Motion", icon: <FiFramer className="text-pink-400" /> },
 ];
+
+const paragraphText = "I am a frontend developer who loves building fast and user friendly web applications. For me, good development is a mix of clean code and sharp design. I focus on the small details like typography, smooth animations, and responsiveness that make an interface feel natural to use. My main stack includes JavaScript, React, Supabase, and Tailwind CSS. Beyond the specific tools, my priority is always writing code that is scalable, accessible, and highly optimized. I have built projects ranging from sleek business websites to interactive web applications, focusing on creating great tools for users. Outside of coding, I am usually checking out new design trends, playing with interface animations, or learning new tech to sharpen my skills.";
+
+// Split into sentences for a cleaner stagger
+const sentences = paragraphText.match(/[^.!?]+[.!?]+/g) || [];
+const highlightWords = ["frontend developer", "React", "Supabase", "Tailwind CSS", "scalable", "accessible"];
 
 export default function AboutUi() {
     const fadeUp = {
         hidden: { opacity: 0, y: 40 },
-
         show: {
             opacity: 1,
             y: 0,
-
-            transition: {
-                duration: 0.8,
-                ease: "easeOut",
-            },
+            transition: { duration: 0.8, ease: "easeOut" },
         },
     };
 
     const stagger = {
         hidden: {},
+        show: {
+            transition: { staggerChildren: 0.12 },
+        },
+    };
 
+    // Sentence stagger variant
+    const sentenceVariants = {
+        hidden: {},
         show: {
             transition: {
-                staggerChildren: 0.12,
+                staggerChildren: 0.18,
+                delayChildren: 0.2,
             },
         },
     };
+
+    const sentenceFade = {
+        hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+        show: {
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            transition: {
+                duration: 0.75,
+                ease: [0.16, 1, 0.3, 1],
+            },
+        },
+    };
+
+
 
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className=" md:px-10 py-20 overflow-hidden"
+            className="md:px-10 py-20 overflow-hidden"
         >
             {/* HEADER */}
             <div className="max-w-7xl mx-auto">
@@ -143,75 +121,76 @@ export default function AboutUi() {
                         className="md:col-span-4"
                     >
                         <motion.figure
-                            whileHover={{
-                                y: -10,
-                                rotate: -1.5,
-                                scale: 1.02,
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 120,
-                                damping: 18,
-                            }}
+                            whileHover={{ y: -10, rotate: -1.5, scale: 1.02 }}
+                            transition={{ type: "spring", stiffness: 120, damping: 18 }}
                             className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-white/10 bg-surface"
                         >
-
-                            {/* Glow background */}
                             <motion.div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-transparent to-cyan-400/20 opacity-0 group-hover:opacity-100 transition duration-700 z-10" />
-
-                            {/* Shine sweep */}
                             <motion.div
                                 initial={{ x: "-120%" }}
                                 whileHover={{ x: "120%" }}
-                                transition={{
-                                    duration: 1.4,
-                                    ease: "easeInOut",
-                                }}
+                                transition={{ duration: 1.4, ease: "easeInOut" }}
                                 className="absolute inset-y-0 w-[20%] bg-white/10 blur-2xl rotate-12 z-20"
                             />
-
-                            {/* Image */}
                             <motion.img
                                 loading="lazy"
                                 src="./images/myPic-3.jpg"
                                 alt="About Abbas"
-                                whileHover={{
-                                    scale: 1.12,
-                                }}
-                                transition={{
-                                    duration: 1.2,
-                                    ease: "easeOut",
-                                }}
+                                whileHover={{ scale: 1.12 }}
+                                transition={{ duration: 1.2, ease: "easeOut" }}
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                             />
-
-                            {/* Dark overlay */}
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition duration-700" />
-
-                            {/* Bottom gradient */}
                             <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/60 to-transparent z-10" />
                         </motion.figure>
                     </motion.div>
 
-                    {/* TEXT */}
+                    {/* TEXT — sentence by sentence animation */}
                     <motion.div
-                        variants={stagger}
+                        variants={sentenceVariants}
                         initial="hidden"
                         whileInView="show"
-                        viewport={{ once: true }}
-                        className="md:col-span-8 space-y-6 text-white text-lg leading-relaxed"
+                        viewport={{ once: true, margin: "-80px" }}
+                        className="md:col-span-8 space-y-4"
                     >
-                        {[
-                            "I am a frontend developer who loves building fast and user friendly web applications. For me, good development is a mix of clean code and sharp design. I focus on the small details like typography, smooth animations, and responsiveness that make an interface feel natural to use. My main stack includes JavaScript, React, Supabase, and Tailwind CSS. Beyond the specific tools, my priority is always writing code that is scalable, accessible, and highly optimized. I have built projects ranging from sleek business websites to interactive web applications, focusing on creating great tools for users. Outside of coding, I am usually checking out new design trends, playing with interface animations, or learning new tech to sharpen my skills.",
-                        ].map((text, index) => (
+                        {/* Decorative top rule */}
+                        <motion.div
+                            variants={sentenceFade}
+                            className="w-12 h-[1px] bg-indigo-500 mb-6"
+                        />
+
+                        {sentences.map((sentence, i) => (
                             <motion.p
-                                key={index}
-                                variants={fadeUp}
-                                className="text-stone-300"
+                                key={i}
+                                variants={sentenceFade}
+                                className="text-stone-400 text-lg leading-relaxed hover:text-stone-200 transition-colors duration-500 cursor-default"
                             >
-                                {text}
+                                {sentence.trim().split(" ").map((word, j) => {
+                                    const isHighlighted = highlightWords.some(hw =>
+                                        sentence.toLowerCase().includes(hw.toLowerCase()) &&
+                                        hw.toLowerCase().includes(word.toLowerCase()) &&
+                                        word.length > 3
+                                    );
+                                    return (
+                                        <span
+                                            key={j}
+                                            className={`inline-block mr-[0.25em] ${isHighlighted
+                                                ? "text-white font-medium"
+                                                : ""
+                                                }`}
+                                        >
+                                            {word}
+                                        </span>
+                                    );
+                                })}
                             </motion.p>
                         ))}
+
+                        {/* Decorative bottom rule */}
+                        <motion.div
+                            variants={sentenceFade}
+                            className="w-full h-[0.5px] bg-gradient-to-r from-white/10 via-indigo-500/20 to-transparent mt-8"
+                        />
                     </motion.div>
                 </section>
             </div>
@@ -222,10 +201,9 @@ export default function AboutUi() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9 }}
-                className="text-white px-6 md:px-10 py-24 mt-24  backdrop-blur-xl"
+                className="text-white px-6 md:px-10 py-24 mt-24 backdrop-blur-xl"
             >
                 <div className="max-w-7xl mx-auto">
-
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -244,43 +222,21 @@ export default function AboutUi() {
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
                     >
                         {[
-                            {
-                                title: "Frontend",
-                                skills: frontendSkills,
-                            },
-
-                            {
-                                title: "Backend",
-                                skills: backendSkills,
-                            },
-
-                            {
-                                title: "Styling",
-                                skills: styling,
-                            },
-
-                            {
-                                title: "Tooling",
-                                skills: toolingSkills,
-                            },
+                            { title: "Frontend", skills: frontendSkills },
+                            { title: "Backend", skills: backendSkills },
+                            { title: "Styling", skills: styling },
+                            { title: "Tooling", skills: toolingSkills },
                         ].map((group, index) => (
                             <motion.div
                                 key={index}
                                 variants={fadeUp}
-                                whileHover={{
-                                    y: -8,
-                                    scale: 1.02,
-                                }}
-                                transition={{
-                                    type: "spring",
-                                    stiffness: 180,
-                                }}
+                                whileHover={{ y: -8, scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 180 }}
                                 className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-lg"
                             >
                                 <p className="text-[10px] text-stone-500 uppercase tracking-widest mb-6">
                                     {group.title}
                                 </p>
-
                                 <div className="space-y-4">
                                     {group.skills.map((skill) => (
                                         <motion.div
@@ -288,13 +244,8 @@ export default function AboutUi() {
                                             whileHover={{ x: 6 }}
                                             className="flex items-center gap-3 text-stone-300 hover:text-white transition"
                                         >
-                                            <span className="text-xl">
-                                                {skill.icon}
-                                            </span>
-
-                                            <p className="text-sm">
-                                                {skill.skill}
-                                            </p>
+                                            <span className="text-xl">{skill.icon}</span>
+                                            <p className="text-sm">{skill.skill}</p>
                                         </motion.div>
                                     ))}
                                 </div>

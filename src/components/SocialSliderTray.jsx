@@ -143,7 +143,7 @@ export default function SocialSliderTray() {
                 {/* Side Label (Optional) */}
                 <div className="hidden md:flex flex-col items-center gap-1 ml-2">
                     <span className="text-xs font-semibold text-white tracking-widest">CONNECT</span>
-                    <div className="w-6 h-0.5 bg-linear-to-r from-gray-400 to-transparent"></div>
+                    {/*     <div className="w-6 h-0.5 bg-linear-to-r from-gray-400 to-transparent"></div> */}
                 </div>
             </div>
 
