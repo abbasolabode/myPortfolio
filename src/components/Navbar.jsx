@@ -29,7 +29,7 @@ export default function Navbar() {
           to="/"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative flex items-center tracking-widest text-sm italic "
+          className="relative flex items-center tracking-widest text-sm italic font-light"
         >
           {/* Letters */}
           <span className="flex">
