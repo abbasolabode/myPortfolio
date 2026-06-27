@@ -8,7 +8,6 @@ export default function ResumeButton({ onClick }) {
         link.href = "/resume/abbas-olabode-resume.pdf";
         link.download = "Abbas_Resume.pdf";
         link.click();
-
     };
 
     return (

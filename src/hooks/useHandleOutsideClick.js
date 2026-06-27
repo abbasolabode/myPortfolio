@@ -7,10 +7,10 @@ export function useHandleOutsideClick(listening = true) {
 
     const handleCloseModal = useCallback(() => {
         setIsOpen(false);
-    });
+    }, [setIsOpen]);
 
 
-    //Automatic display of the modal
+    //1. Automatic display of the modal
     useEffect(() => {
         const timer = setInterval(() => {
             if (isOpen) return;
@@ -19,11 +19,12 @@ export function useHandleOutsideClick(listening = true) {
 
         //Clean up function
         return () => clearInterval(timer);
-    }, [isOpen])
+    }, [isOpen]);
 
 
-    //
+    //2. 
     useEffect(() => {
+        //Checking if the the DOM element exists and does not contain the clicked element 
         const handleOutsideClick = function (e) {
             if (ref.current && !ref.current.contains(e.target)) return handleCloseModal();
         }
@@ -36,16 +37,17 @@ export function useHandleOutsideClick(listening = true) {
 
 
 
-
+    //3. 
     useEffect(() => {
+        //Checking if the clicked element is equal to the ESCAPE key
         const handleEscapeKey = function (e) {
             if (e.key === "Escape") return handleCloseModal();
         }
 
-        document.addEventListener("keydown", handleEscapeKey,);
+        document.addEventListener("keydown", handleEscapeKey);
 
         //Clean up function
-        return () => removeEventListener("keydown", handleEscapeKey,)
+        return () => removeEventListener("keydown", handleEscapeKey)
     }, [handleCloseModal]);
 
 

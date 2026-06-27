@@ -120,7 +120,7 @@ export default function HeroSection() {
                         }}
                         className="text-white/90 mt-6 font-display italic text-[clamp(3.5rem,12vw,13rem)] leading-[0.85] tracking-tight"
                     >
-                        Abbas
+                        I build
                     </motion.h1>
 
                     <motion.h2
@@ -147,7 +147,7 @@ export default function HeroSection() {
                         }}
                         className="ml-[12%] text-stone-500 text-[clamp(3.5rem,12vw,13rem)] leading-[0.85]"
                     >
-                        Olabode
+                        careful software
                     </motion.h2>
                 </div>
 
@@ -183,7 +183,7 @@ export default function HeroSection() {
                         }}
                         className="max-w-[44ch] text-base md:text-lg leading-relaxed text-stone-600"
                     >
-                        Frontend developer focused on building clean,
+                        I'm Abbas Olabode Frontend developer focused on building clean,
                         responsive, high performance, and user-friendly web applications with
                         ReactJS, JavaScript and Supabase.
                     </motion.p>

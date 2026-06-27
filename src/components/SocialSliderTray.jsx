@@ -108,7 +108,7 @@ export default function SocialSliderTray() {
             exit="exit"
         >
             {/* Main Tray Container */}
-            <div className="flex items-center gap-2 px-3 py-4 bg-gradient-to-r from-black via-slate-900 to-white rounded-r-2xl shadow-lg backdrop-blur-sm border border-white/15">
+            <div className="flex items-center gap-2 px-3 py-4 bg-linear-to-r from-black via-slate-900 to-white rounded-r-2xl shadow-lg backdrop-blur-sm border border-white/15">
                 {/* Vertical Divider Line */}
                 <div className="w-1 h-12 bg-white/20 rounded-full"></div>
 
@@ -138,12 +138,12 @@ export default function SocialSliderTray() {
                 </div>
 
                 {/* Vertical Divider Line */}
-                <div className="w-1 h-12 bg-gradient-to-b from-transparent via-gray-300 to-transparent rounded-full"></div>
+                <div className="w-1 h-12 bg-linear-to-b from-transparent via-gray-300 to-transparent rounded-full"></div>
 
                 {/* Side Label (Optional) */}
                 <div className="hidden md:flex flex-col items-center gap-1 ml-2">
                     <span className="text-xs font-semibold text-white tracking-widest">CONNECT</span>
-                    <div className="w-6 h-0.5 bg-gradient-to-r from-gray-400 to-transparent"></div>
+                    <div className="w-6 h-0.5 bg-linear-to-r from-gray-400 to-transparent"></div>
                 </div>
             </div>
 

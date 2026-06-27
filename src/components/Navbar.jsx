@@ -12,23 +12,65 @@ const navLinks = [
   { id: 4, path: "/contact", label: "Contact" },
 ];
 
+const logoChars = "Abbas Olabode".split("");
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-white/10 lg:flex lg:justify-evenly min-[820px]:flex min-[820px]:justify-between min-[820px]:space-x-4">
 
       {/* TOP BAR */}
       <div className="w-full flex justify-between items-center px-8 min-h-15.75">
-        <Link className="text-lg text-white font-semibold" to="/">
-          AO<span className="text-blue-500 text-lg"> . </span>DEV
+
+        {/* ── Logo ── */}
+        <Link
+          to="/"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="relative flex items-center tracking-widest text-sm italic "
+        >
+          {/* Letters */}
+          <span className="flex">
+            {logoChars.map((char, i) => (
+              <motion.span
+                key={i}
+                animate={{
+                  y: isHovered ? -4 : 0,
+                  color: isHovered ? "#3b82f6" : "#ffffff",
+                }}
+                transition={{
+                  delay: isHovered ? i * 0.03 : (logoChars.length - i) * 0.02,
+                  duration: 0.35,
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 18,
+                }}
+                className="inline-block text-sm font-normal"
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </span>
+
+          {/* Sliding underline */}
+          <motion.span
+            className="absolute bottom-[-3px] left-0 h-[1px] bg-gradient-to-r from-blue-500 to-indigo-400"
+            initial={{ width: "0%" }}
+            animate={{ width: isHovered ? "100%" : "0%" }}
+            transition={{
+              duration: 0.45,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          />
         </Link>
 
-        {/* Animated Icon Button */}
+        {/* Burger */}
         <motion.button
           whileTap={{ scale: 0.85 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="w-1 h-10 flex lg:hidden min-[820px]:hidden  items-center justify-center text-white"
+          className="w-1 h-10 flex lg:hidden min-[820px]:hidden items-center justify-center text-white"
         >
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
@@ -52,7 +94,7 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* MENU PANEL */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
           <motion.nav
@@ -63,9 +105,7 @@ export default function Navbar() {
             className="lg:hidden overflow-hidden"
           >
             <div className="px-6 py-10 bg-black/95 border-t border-white/10">
-
               <ul className="flex flex-col gap-8 uppercase tracking-widest text-sm text-white">
-
                 {navLinks.map((link, index) => (
                   <motion.li
                     key={link.id}
@@ -85,34 +125,27 @@ export default function Navbar() {
                       className="relative text-stone-500 uppercase transition-colors duration-300 hover:text-blue-500"
                     >
                       {link.label}
-
-                      {/* underline animation */}
-                      <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   </motion.li>
                 ))}
-
               </ul>
             </div>
           </motion.nav>
         )}
       </AnimatePresence>
 
-
-      {/* Desktop */}
+      {/* DESKTOP NAV */}
       <nav className="hidden pr-6 lg:flex lg:gap-50 items-center w-full min-[820px]:flex min-[820px]:gap-10">
-        <ul className="text-stone-500 uppercase tracking-wider text-sm flex gap-10 items-center ">
+        <ul className="text-stone-500 uppercase tracking-wider text-sm flex gap-10 items-center">
           {navLinks.map(link => (
             <Link to={link.path} key={link.id}>{link.label}</Link>
           ))}
         </ul>
-
         <div className="text-white flex items-center">
-          <span><RxDotFilled size={20} className=" animate-pulse text-green-500" /></span>
+          <span><RxDotFilled size={20} className="animate-pulse text-green-500" /></span>
           <p className="text-stone-500 uppercase tracking-wider text-sm">Available</p>
         </div>
-
       </nav>
     </header>
   );
-} 
+}
